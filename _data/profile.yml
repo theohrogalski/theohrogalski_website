@@ -1,0 +1,28 @@
+education:
+  school: Stevens Institute of Technology
+  degree: Joint Bachelor's & Master's of Engineering in Computer and Electrical Engineering
+  dates: Expected May 2027
+  gpa: "3.93"
+  coursework: Optimization, Autonomous Mobile Robotics, Probability and Stochastic Processes, Control Theory
+
+honors:
+  - Dean's List
+  - $500 NJ STEM Grant
+  - California Seal of Biliteracy (Spanish)
+  - Member, IEEE Eta Kappa Nu (HKN), Robotics and Automation Society, Control Systems Society
+
+leadership:
+  - role: Teaching Assistant
+    org: Introduction to Programming and Algorithmic Thinking, Stevens
+  - role: Vice President of the Learning Community
+    org: Sigma Phi Epsilon, Stevens
+
+skills:
+  - category: Robotics & ML
+    items: [PyTorch, Isaac Sim / Isaac Lab, ROS 2, PettingZoo, Gymnasium, CUDA, LangChain, Claude Code]
+  - category: Languages
+    items: [Python, C++, SQL, JavaScript, VHDL, Embedded C, ARM Assembly]
+  - category: Hardware
+    items: [FPGAs, Microcontrollers, Universal Robots Manipulators]
+  - category: Tools
+    items: [MATLAB / Simulink, Docker, Git, SolidWorks, AutoCAD, R]

@@ -1,0 +1,26 @@
+# Newest first. Optional fields: image (teaser image/GIF in assets/img), highlight,
+# links (any label: url pairs), bibtex. My name is bolded automatically.
+- title: Fully Decentralized and Safety-Aware Multi-Agent Reinforcement Learning for Control on Networks
+  authors: Theodore Rogalski, Shirantha Welikala
+  venue: IEEE HKN Innovating the Future Conference
+  year: 2026
+  url: https://arxiv.org/abs/2609.36292
+  image:
+  highlight: true
+  summary: >-
+    A fully decentralized MARL algorithm combining a graph encoder, a neural state
+    estimator, and a discrete-time control barrier heuristic. On persistent monitoring,
+    it achieves 26.3% lower average uncertainty than a centralized policy.
+  links:
+    arXiv: https://arxiv.org/abs/2609.36292
+    PDF: https://arxiv.org/pdf/2609.36292
+  bibtex: |-
+    @misc{rogalski2026decentralized,
+      title         = {Fully Decentralized and Safety-Aware Multi-Agent Reinforcement Learning for Control on Networks},
+      author        = {Rogalski, Theodore and Welikala, Shirantha},
+      year          = {2026},
+      eprint        = {2609.36292},
+      archivePrefix = {arXiv},
+      primaryClass  = {eess.SY},
+      note          = {IEEE HKN Innovating the Future Conference}
+    }

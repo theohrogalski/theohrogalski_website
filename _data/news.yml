@@ -1,0 +1,16 @@
+# Newest first. The first 5 show by default; the rest sit behind "Show more".
+# Text may contain HTML (links, <b>, etc.).
+- date: Nov 2026
+  text: Presenting our decentralized safe MARL paper at the <b>IEEE HKN Innovating the Future Conference</b> (Nov 6–8).
+- date: Sep 2026
+  text: 'Preprint posted: <a href="https://arxiv.org/abs/2609.36292">Fully Decentralized and Safety-Aware Multi-Agent Reinforcement Learning for Control on Networks</a>.'
+- date: Sep 2026
+  text: Started as a Graduate Researcher at Stevens, working on learning-based control for unmanned surface vehicles.
+- date: May 2026
+  text: Joined the <b>Los Alamos National Laboratory</b> Robotics Summer School, building safe RL policies for an autonomous lab.
+- date: Jun 2025
+  text: AI Research Intern at the <b>Air Force Research Laboratory</b> in Rome, NY.
+- date: Apr 2025
+  text: Began undergraduate research at Stevens on multi-agent reinforcement learning for networked systems.
+- date: Dec 2023
+  text: Joined the California Air Resources Board as a Student Assistant.

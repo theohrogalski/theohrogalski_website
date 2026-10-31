@@ -1,0 +1,63 @@
+# Newest first. category: research | industry
+# Optional: image (photo/GIF in assets/img), links (label: url pairs), note.
+- org: Stevens Institute of Technology
+  role: Graduate Researcher
+  location: Hoboken, NJ
+  dates: Sep 2026 – Present
+  category: research
+  title: Learning-based control for unmanned surface vehicles
+  bullets:
+    - Developed a low-level USV controller combining PID control and machine learning.
+    - Built a multi-agent RL controller that uses computer vision for a ROS 2 / VRX simulation system, optimized for low-power hardware and custom URDF models.
+    - Mathematically modeled and tuned the controller for the oceanic USV environment.
+  tags: [Multi-Agent RL, ROS 2, VRX, Computer Vision, PID]
+
+- org: Los Alamos National Laboratory
+  role: Robotics Summer School Intern
+  location: Los Alamos, NM
+  dates: May 2026 – Aug 2026
+  category: research
+  title: Safe RL for a fully autonomous lab
+  bullets:
+    - Developed a safe reinforcement learning control policy in Isaac Sim / Isaac Lab for DNA sample transfer, enabling fully autonomous operation with no collisions over hours of testing and under 5 mm sim-to-real position error.
+    - Built a computer vision system for sim-to-real transfer with a 1% error rate, allowing execution in unpredictable lab environments.
+    - Created a human-machine interface with a digital twin for monitoring the autonomous system.
+  note: Submission planned for IDETC 2027.
+  tags: [Safe RL, Isaac Sim, Sim-to-Real, Computer Vision, Digital Twin]
+
+- org: Stevens Institute of Technology
+  role: Undergraduate Researcher
+  location: Hoboken, NJ
+  dates: Apr 2025 – Aug 2026
+  category: research
+  title: Decentralized, safety-aware MARL on networks
+  bullets:
+    - Created a custom simulation environment for multi-agent RL on graph topologies for persistent monitoring (PettingZoo, NetworkX).
+    - Formulated a deep RL algorithm combining a neural state estimator, the graph Laplacian, graph attention, an MLP actor-critic, and a discrete control barrier function.
+  note: Published at the IEEE HKN Innovating the Future Conference, Nov 2026.
+  links:
+    Paper: https://arxiv.org/abs/2609.36292
+  tags: [Multi-Agent RL, Graph Neural Networks, Control Barrier Functions, PettingZoo]
+
+- org: Air Force Research Laboratory
+  role: AI Research Intern
+  location: Rome, NY
+  dates: Jun 2025 – Aug 2025
+  category: research
+  title: Vision models and AI transparency
+  bullets:
+    - Trained and evaluated Vision Transformer, CNN, and multimodal LLM models with custom classifier heads on a synthetic image dataset built in Unreal Engine.
+    - Used PyTorch with CUDA for a 10× training and inference speedup and a 30% accuracy gain on inductive tasks.
+    - Applied traceability techniques and permutation analysis to increase AI transparency.
+  tags: [Vision Transformers, Multimodal LLMs, PyTorch, CUDA]
+
+- org: California Air Resources Board
+  role: Student Assistant
+  location: Sacramento, CA
+  dates: Dec 2023 – Aug 2024
+  category: industry
+  bullets:
+    - Independently built a VIN decoder system on the NHTSA API for large-scale data processing.
+    - Developed an internal data processing tool that saved the agency hundreds of thousands of dollars.
+    - Created a secure Flask GUI with two-factor authentication and input sanitization.
+  tags: [Python, Flask, Data Processing]

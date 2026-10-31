@@ -1,3 +1,122 @@
 ---
 layout: default
 ---
+{% assign a = site.author %}
+{% assign p = site.data.profile %}
+
+<section id="about" class="hero">
+  <div class="hero-text">
+    <h1>{{ a.name }}</h1>
+    <p class="tagline">{{ a.tagline }}</p>
+    <p>
+      I'm a joint bachelor's/master's student in Computer and Electrical Engineering at
+      <a href="https://www.stevens.edu">Stevens Institute of Technology</a>. I work on
+      making teams of robots learn to act safely: decentralized multi-agent reinforcement
+      learning, control barrier functions, and sim-to-real transfer.
+    </p>
+    <p>
+      I've built safe RL policies for an autonomous lab at
+      <strong>Los Alamos National Laboratory</strong>, trained vision models at the
+      <strong>Air Force Research Laboratory</strong>, and currently develop learning-based
+      controllers for unmanned surface vehicles at Stevens. I also enjoy the hardware side:
+      FPGAs, embedded systems, and power electronics.
+    </p>
+    <p class="callout">I am applying to PhD programs for Fall 2027.</p>
+    <p class="hero-links">
+      <a href="mailto:{{ a.email }}">Email</a>
+      <a href="{{ a.cv | relative_url }}">CV</a>
+      {% if a.scholar != "" %}<a href="https://scholar.google.com/citations?user={{ a.scholar }}">Google Scholar</a>{% endif %}
+      <a href="https://github.com/{{ a.github }}">GitHub</a>
+      <a href="https://www.linkedin.com/in/{{ a.linkedin }}/">LinkedIn</a>
+      <a href="https://orcid.org/{{ a.orcid }}">ORCID</a>
+    </p>
+  </div>
+  <img class="headshot" src="{{ a.photo | relative_url }}" alt="Photo of {{ a.name }}" width="240" height="240">
+</section>
+
+<section id="news">
+  <h2>News</h2>
+  <ul class="news">
+    {% for n in site.data.news limit: 5 %}
+    <li><span class="news-date">{{ n.date }}</span> <span>{{ n.text }}</span></li>
+    {% endfor %}
+  </ul>
+  {% if site.data.news.size > 5 %}
+  <details class="more">
+    <summary>Show more</summary>
+    <ul class="news">
+      {% for n in site.data.news offset: 5 %}
+      <li><span class="news-date">{{ n.date }}</span> <span>{{ n.text }}</span></li>
+      {% endfor %}
+    </ul>
+  </details>
+  {% endif %}
+</section>
+
+<section id="publications">
+  <h2>Publications</h2>
+  {% for pub in site.data.publications %}
+    {% include entry.html item=pub kind="publication" %}
+  {% endfor %}
+</section>
+
+<section id="research">
+  <h2>Research</h2>
+  {% assign research = site.data.experience | where: "category", "research" %}
+  {% for r in research %}
+    {% include entry.html item=r kind="research" %}
+  {% endfor %}
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  {% for proj in site.data.projects %}
+    {% include entry.html item=proj kind="project" %}
+  {% endfor %}
+</section>
+
+<section id="experience">
+  <h2>Experience &amp; Education</h2>
+
+  <div class="grid-2">
+    <div>
+      <h3>Education</h3>
+      <p><span class="dates">{{ p.education.dates }}</span><strong>{{ p.education.school }}</strong><br>
+        {{ p.education.degree }}<br>
+        GPA: {{ p.education.gpa }}</p>
+      <p class="muted">Relevant coursework: {{ p.education.coursework }}</p>
+    </div>
+    <div>
+      <h3>Industry</h3>
+      {% assign industry = site.data.experience | where: "category", "industry" %}
+      {% for job in industry %}
+      <p><span class="dates">{{ job.dates }}</span><strong>{{ job.role }}</strong>, {{ job.org }}</p>
+      <ul>
+        {% for b in job.bullets %}<li>{{ b }}</li>{% endfor %}
+      </ul>
+      {% endfor %}
+    </div>
+    <div>
+      <h3>Teaching &amp; Leadership</h3>
+      <ul>
+        {% for l in p.leadership %}<li><strong>{{ l.role }}</strong>, {{ l.org }}</li>{% endfor %}
+      </ul>
+    </div>
+    <div>
+      <h3>Honors</h3>
+      <ul>
+        {% for h in p.honors %}<li>{{ h }}</li>{% endfor %}
+      </ul>
+    </div>
+  </div>
+
+  <h3>Skills</h3>
+  <dl class="skills">
+    {% for group in p.skills %}
+    <dt>{{ group.category }}</dt>
+    <dd><ul class="tags">{% for s in group.items %}<li>{{ s }}</li>{% endfor %}</ul></dd>
+    {% endfor %}
+  </dl>
+
+  <p><a class="btn btn-primary" href="{{ a.cv | relative_url }}">Download full CV (PDF)</a></p>
+</section>

@@ -2,17 +2,24 @@
 <html lang="en">
   {% include head.html %}
   <body>
-      {% include header.html %}
-      <section id="about">
-        {% include about.html %}
-      </section>
-      <section id="projects">
-        {% include projects.html %}
-      </section>
-      <section id="resume">
-        {% include resume.html %}
-      </section>
-        {{ content }}
-      {% include footer.html %}
-      
+    <a class="skip-link" href="#main">Skip to content</a>
+    <nav class="site-nav" aria-label="Sections">
+      <div class="container nav-inner">
+        <a class="nav-name" href="#about">{{ site.author.name }}</a>
+        <ul>
+          <li><a href="#news">News</a></li>
+          <li><a href="#publications">Publications</a></li>
+          <li><a href="#research">Research</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="{{ site.author.cv | relative_url }}">CV</a></li>
+        </ul>
+      </div>
+    </nav>
+    <main id="main" class="container">
+      {{ content }}
+    </main>
+    {% include footer.html %}
+    {% include analytics.html %}
   </body>
+</html>

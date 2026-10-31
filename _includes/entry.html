@@ -1,0 +1,56 @@
+{% comment %}
+  One row in a Barron/Pathak-style list: optional media on the left, text on the right.
+  Params: item (the data entry), kind ("publication" | "research" | "project").
+{% endcomment %}
+{% assign item = include.item %}
+<article class="entry{% if item.image %} has-media{% endif %}{% if item.highlight %} highlight{% endif %}">
+  {% if item.image %}
+  <div class="entry-media">
+    {% assign ext = item.image | split: "." | last | downcase %}
+    {% if ext == "mp4" or ext == "webm" %}
+    <video src="{{ item.image | relative_url }}" autoplay loop muted playsinline aria-label="{{ item.title }}"></video>
+    {% else %}
+    <img src="{{ item.image | relative_url }}" alt="{{ item.image_alt | default: item.title }}" loading="lazy">
+    {% endif %}
+  </div>
+  {% endif %}
+  <div class="entry-body">
+    {% if include.kind == "publication" %}
+      <h3 class="entry-title">{% if item.url %}<a href="{{ item.url }}">{{ item.title }}</a>{% else %}{{ item.title }}{% endif %}</h3>
+      <p class="entry-meta">{% capture me %}<strong>{{ site.author.name }}</strong>{% endcapture %}{{ item.authors | replace: site.author.name, me }}<br>
+        <em>{{ item.venue }}</em>, {{ item.year }}</p>
+    {% elsif include.kind == "research" %}
+      <h3 class="entry-title">{{ item.title | default: item.role }}</h3>
+      <p class="entry-meta"><span class="dates">{{ item.dates }}</span><strong>{{ item.role }}</strong>, {{ item.org }} · {{ item.location }}</p>
+    {% else %}
+      <h3 class="entry-title">{{ item.title }}</h3>
+      <p class="entry-meta"><span class="dates">{{ item.dates }}</span><em>{{ item.stack }}</em></p>
+    {% endif %}
+
+    {% if item.summary %}<p>{{ item.summary }}</p>{% endif %}
+    {% if item.bullets %}
+    <ul>
+      {% for b in item.bullets %}<li>{{ b }}</li>{% endfor %}
+    </ul>
+    {% endif %}
+    {% if item.note %}<p class="entry-note">{{ item.note }}</p>{% endif %}
+
+    {% if item.links or item.bibtex %}
+    <div class="entry-links">
+      {% for link in item.links %}<a class="btn" href="{{ link[1] }}">{{ link[0] }}</a>{% endfor %}
+      {% if item.bibtex %}
+      <details class="bibtex">
+        <summary class="btn">BibTeX</summary>
+        <pre><code>{{ item.bibtex | xml_escape }}</code></pre>
+      </details>
+      {% endif %}
+    </div>
+    {% endif %}
+
+    {% if item.tags %}
+    <ul class="tags" aria-label="Topics">
+      {% for t in item.tags %}<li>{{ t }}</li>{% endfor %}
+    </ul>
+    {% endif %}
+  </div>
+</article>

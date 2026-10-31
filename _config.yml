@@ -1,20 +1,41 @@
 # Site settings
-title: Theo Rogalski | Computer Eng. Student
-description: My portfolio + other interesting content
-# baseurl: "/particle" # the subpath of your site, e.g. /blog
-# url: "localhost:3000" # the base hostname & protocol for your site e.g. http://willianjusten.com.br
+title: Theodore Rogalski
+description: >-
+  Theodore Rogalski — BS/MS Computer & Electrical Engineering student at Stevens
+  Institute of Technology working on safe multi-agent reinforcement learning,
+  control, and sim-to-real robotics.
+url: "https://theohrogalski.github.io"
+baseurl: "/theohrogalski_website"
+lang: en_US
+image: /assets/img/og-image.jpg
 
-# User settings
-username: Theodore Rogalski
-user_description: Welcome to my website! I'm Theo, a computer engineering student interested in Artificial Intelligence/Machine Learning, Hardware Design and the cloud. My work experience includes making impactful software at an environmental agency and beign the lead software developer at my university's Makerspace.
-user_title: Computer Engineering Student
-email: rogalski.theo@gmailcom
-twitter_username: lorem_ipsum
-github_username:  theohrogalski
-gplus_username:  lorem_ipsum
+# About me (rendered in the hero on the home page)
+author:
+  name: Theodore Rogalski
+  short_name: Theo
+  tagline: BS/MS ECE @ Stevens · safe multi-agent RL, control & sim-to-real robotics
+  email: trogalsk@stevens.edu
+  photo: /assets/img/headshot.jpg
+  cv: /assets/pdf/Theodore_Rogalski_CV.pdf
+  github: theohrogalski
+  linkedin: theodore-rogalski
+  orcid: 0009-0007-6810-8877
+  scholar: ""   # Google Scholar user id, e.g. "AbCdEfGhIjK" — leave empty to hide
 
-# Google-analytics
-google-analytics:
-  id: ""
+# Used by jekyll-seo-tag for the Person schema
+social:
+  name: Theodore Rogalski
+  links:
+    - https://github.com/theohrogalski
+    - https://www.linkedin.com/in/theodore-rogalski/
+    - https://orcid.org/0009-0007-6810-8877
 
-exclude: ['package.json', 'src' , 'node_modules']
+# Analytics: create a free https://www.goatcounter.com account and put its code
+# here (the "xyz" in xyz.goatcounter.com). Leave empty to disable.
+goatcounter: ""
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+exclude: [README.md, LICENSE.txt, Gemfile, Gemfile.lock, docs, vendor, node_modules]

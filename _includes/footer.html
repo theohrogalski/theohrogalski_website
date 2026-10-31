@@ -1,8 +1,6 @@
-<footer class="footer">
-    <p>&copy; {{site.username}}</p>
-    <p>Build with Jekyll and <span class="love">❤</span> by <a href="https://github.com/nrandecker">Nathan Randecker</a></p>
+<footer class="site-footer">
+  <div class="container">
+    <p>&copy; {{ site.time | date: "%Y" }} {{ site.author.name }} · Last updated {{ site.time | date: "%B %-d, %Y" }}</p>
+    <p>Thanks to <a href="https://github.com/willianjusten/will-jekyll-template">Willian Justen</a>, <a href="https://github.com/VincentGarreau/particles.js/">Vincent Garreau</a>, <a href="https://jonbarron.info">Jon Barron</a>, and <a href="https://www.cs.cmu.edu/~dpathak/">Deepak Pathak</a>.</p>
+  </div>
 </footer>
-<script src="//cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-<script src="{{ "/assets/js/sweet-scroll.min.js" | prepend: site.baseurl }}"></script>
-<script src="{{ "/assets/js/main.js" | prepend: site.baseurl }}"></script>
-{% include google-analytics.html %}

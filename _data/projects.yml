@@ -1,0 +1,19 @@
+# Newest first. Optional: image (photo/GIF in assets/img), links (label: url pairs).
+- title: Cybersecurity Transceiver Module
+  dates: Jan – May 2026
+  stack: VHDL, FPGA, Graphics Programming
+  image:
+  summary: >-
+    A SHA-256 hashing system on an FPGA for secure message sending. Users type
+    messages with a keyboard and see them on a monitor, with hashing at millisecond speed.
+  tags: [VHDL, FPGA, Cryptography]
+
+- title: Reinforcement Learning-Based Buck-Boost Controller
+  dates: Nov – Dec 2025
+  stack: MATLAB, Simulink
+  image:
+  summary: >-
+    An actor-critic RL agent for PWM control of a buck-boost converter with limited
+    system information. It reaches steady-state control within 10% of an autotuned
+    PID baseline, which I also built.
+  tags: [Reinforcement Learning, Power Electronics, Control]
