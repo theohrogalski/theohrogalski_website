@@ -26,4 +26,4 @@ project entry to show a teaser on the left. To update the CV, replace
     # or, with Docker:
     docker run --rm -p 4000:4000 -v "$PWD":/srv/jekyll jekyll/jekyll:pages jekyll serve
 
-Thanks to [Willian Justen](https://github.com/willianjusten/will-jekyll-template), [Vincent Garreau](https://github.com/VincentGarreau/particles.js/), [Jon Barron](https://jonbarron.info), and [Deepak Pathak](https://www.cs.cmu.edu/~dpathak/).
+Thanks to [Willian Justen](https://github.com/willianjusten/will-jekyll-template), [Vincent Garreau](https://github.com/VincentGarreau/particles.js/), [Jon Barron](https://jonbarron.info), and [Deepak Pathak](https://www.cs.cmu.edu/~dpathak/) for formatting inspiration.
