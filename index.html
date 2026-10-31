@@ -4,10 +4,26 @@ layout: default
 {% assign a = site.author %}
 {% assign p = site.data.profile %}
 
-<section id="about" class="hero">
-  <div class="hero-text">
-    <h1>{{ a.name }}</h1>
-    <p class="tagline">{{ a.tagline }}</p>
+<div class="page">
+<aside class="profile" aria-label="Profile">
+  <img class="headshot" src="{{ a.photo | relative_url }}" alt="Photo of {{ a.name }}" width="200" height="200">
+  <h1 class="profile-name">{{ a.name }}</h1>
+  <p class="tagline">{{ a.tagline }}</p>
+  <ul class="profile-links">
+    <li><a href="mailto:{{ a.email }}">{% include icon.html name="email" %}<span>{{ a.email }}</span></a></li>
+    <li><a href="{{ a.cv | relative_url }}">{% include icon.html name="cv" %}<span>CV (PDF)</span></a></li>
+    {% if a.scholar != "" %}<li><a href="https://scholar.google.com/citations?user={{ a.scholar }}">{% include icon.html name="scholar" %}<span>Google Scholar</span></a></li>{% endif %}
+    <li><a href="https://github.com/{{ a.github }}">{% include icon.html name="github" %}<span>GitHub</span></a></li>
+    <li><a href="https://www.linkedin.com/in/{{ a.linkedin }}/">{% include icon.html name="linkedin" %}<span>LinkedIn</span></a></li>
+    <li><a href="https://orcid.org/{{ a.orcid }}">{% include icon.html name="orcid" %}<span>ORCID</span></a></li>
+  </ul>
+  <p class="callout">Applying to PhD programs for Fall 2027</p>
+</aside>
+
+<div class="content">
+<section id="about">
+  <h2>About</h2>
+  <div class="about">
     <p>
       I'm a joint bachelor's/master's student in Computer and Electrical Engineering at
       <a href="https://www.stevens.edu">Stevens Institute of Technology</a>. I work on
@@ -21,17 +37,7 @@ layout: default
       controllers for unmanned surface vehicles at Stevens. I also enjoy the hardware side:
       FPGAs, embedded systems, and power electronics.
     </p>
-    <p class="callout">I am applying to PhD programs for Fall 2027.</p>
-    <p class="hero-links">
-      <a href="mailto:{{ a.email }}">Email</a>
-      <a href="{{ a.cv | relative_url }}">CV</a>
-      {% if a.scholar != "" %}<a href="https://scholar.google.com/citations?user={{ a.scholar }}">Google Scholar</a>{% endif %}
-      <a href="https://github.com/{{ a.github }}">GitHub</a>
-      <a href="https://www.linkedin.com/in/{{ a.linkedin }}/">LinkedIn</a>
-      <a href="https://orcid.org/{{ a.orcid }}">ORCID</a>
-    </p>
   </div>
-  <img class="headshot" src="{{ a.photo | relative_url }}" alt="Photo of {{ a.name }}" width="240" height="240">
 </section>
 
 <section id="news">
@@ -87,6 +93,14 @@ layout: default
       <p class="muted">Relevant coursework: {{ p.education.coursework }}</p>
     </div>
     <div>
+      <h3>Honors</h3>
+      <ul>
+        {% for h in p.honors %}<li>{{ h }}</li>{% endfor %}
+      </ul>
+    </div>
+  </div>
+
+  <div>
       <h3>Industry</h3>
       {% assign industry = site.data.experience | where: "category", "industry" %}
       {% for job in industry %}
@@ -95,19 +109,13 @@ layout: default
         {% for b in job.bullets %}<li>{{ b }}</li>{% endfor %}
       </ul>
       {% endfor %}
-    </div>
-    <div>
+  </div>
+
+  <div>
       <h3>Teaching &amp; Leadership</h3>
       <ul>
         {% for l in p.leadership %}<li><strong>{{ l.role }}</strong>, {{ l.org }}</li>{% endfor %}
       </ul>
-    </div>
-    <div>
-      <h3>Honors</h3>
-      <ul>
-        {% for h in p.honors %}<li>{{ h }}</li>{% endfor %}
-      </ul>
-    </div>
   </div>
 
   <h3>Skills</h3>
@@ -120,3 +128,5 @@ layout: default
 
   <p><a class="btn btn-primary" href="{{ a.cv | relative_url }}">Download full CV (PDF)</a></p>
 </section>
+</div>
+</div>

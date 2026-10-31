@@ -21,7 +21,7 @@
         <em>{{ item.venue }}</em>, {{ item.year }}</p>
     {% elsif include.kind == "research" %}
       <h3 class="entry-title">{{ item.title | default: item.role }}</h3>
-      <p class="entry-meta"><span class="dates">{{ item.dates }}</span><strong>{{ item.role }}</strong>, {{ item.org }} · {{ item.location }}</p>
+      <p class="entry-meta"><span class="dates">{{ item.dates }}</span><strong>{{ item.role }}</strong>, <span class="nowrap">{{ item.org }}</span> · <span class="nowrap">{{ item.location }}</span></p>
     {% else %}
       <h3 class="entry-title">{{ item.title }}</h3>
       <p class="entry-meta"><span class="dates">{{ item.dates }}</span><em>{{ item.stack }}</em></p>
